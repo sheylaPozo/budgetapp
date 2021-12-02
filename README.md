@@ -83,6 +83,6 @@ Hat tip to anyone whose code was used:
 - Original design idea by Gregoire Vella on [Behance](https://www.behance.net/gregoirevella).
 - Inspiration
 
-## 📝 License 🤍:
+## 📝 License:
 
 This project is [MIT](./LICENSE.md) licensed.
