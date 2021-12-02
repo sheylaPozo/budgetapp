@@ -76,7 +76,7 @@ rails g scaffold_controller model
 ### Undo migration
 rake db:migrate VERSION=0
 ```
-
+---
 ## Author
 
 👤 **Sheyla**
