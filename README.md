@@ -1,38 +1,37 @@
-# Budget App
+# Budget App 🤍
 
-![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
+![Microverse](https://img.shields.io/badge/Microverse-blueviolet)![app](https://img.shields.io/badge/Myapp-blue
 
-> A mobile web application where you can manage your budget
+> A mobile web application where you can manage your budget 🤍
+> With a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-A mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
-
-## Built With
+## Built With 🤍
 
 - Ruby on Rails
 - PostgreSQL
 
-## Getting Started
+## Getting Started 🤍
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### Prerequisites 🤍
 
-- [Ruby](https://www.ruby-lang.org/en/)
-- [Rails](https://gorails.com/)
+- [Ruby](https://www.ruby-lang.org/en/) 🤍
+- [Rails](https://gorails.com/) 🤍
 
-### Setup
+### Setup 🤍
 
 - Make sure you have Ruby on Rails set up properly on your computer
 - Clone or download this repo on your machine
 - Enter project directory
 
-### Install
+### Install 🤍
 
 ```sh
 bundle install
 ```
 
-### Database
+### Database 🤍
 
 ```sh
 # Create user
@@ -48,56 +47,42 @@ rails db:migrate
 rails db:schema:load
 ```
 
-### Run
+### Run 🤍
 
 ```sh
 rails s
 ```
 
-### Test
+### Test 🤍
 
 ```sh
 rspec
 ```
 
-### Troubleshoot
+## Author 🤍
 
-```sh
-### Rspec failing
-RAILS_ENV=test rake db:reset
-```
+👤 **Sheyla Pozo** 
 
-```sh
-### New Scaffold
-rails g scaffold_controller model
-```
+- Github:[sheylaPozo](https://github.com/sheylaPozo)
+- Linkedin: [Sheyla Pozo](https://www.linkedin.com/in/sheypozo/)
 
-```sh
-### Undo migration
-rake db:migrate VERSION=0
-```
----
-## Author
+## 🤝 Contributing:
 
-👤 **Sheyla**
+Contributions, issues, and feature requests are welcome! 🤍
 
+Feel free to check the [issues page](https://github.com/sheylaPozo/budgetapp/issues).
 
+## 🤍 Show your support:
 
-## 🤝 Contributing
+Give a `⭐️` if you like this project!
 
-Contributions, issues, and feature requests are welcome!
+## 🤍 Acknowledgments:
 
-Feel free to check the [issues page](../../issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Microverse
+Hat tip to anyone whose code was used:
+- Microverse's guidelines
 - Original design idea by Gregoire Vella on [Behance](https://www.behance.net/gregoirevella).
+- Inspiration
 
-## License
+## 📝 License 🤍:
 
-[MIT](./LICENSE)
+This project is [MIT](./LICENSE.md) licensed.
