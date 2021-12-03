@@ -1,0 +1,33 @@
+<nav class = "nav-top-two">
+    <a href="/"><i class="fas fa-home" aria-hidden="true"></i></a>
+    <p id= "no-padding">CATEGORIES</p>
+    <%= link_to destroy_user_session_path, method: :delete, class: "links" do %>
+        <i class="fas fa-sign-out-alt"></i>
+    <% end %>
+</nav>
+
+<div class="extra">
+    <% if @groups.exists? %>
+    <ul class = "group-ul">
+        <% @groups.each do |group| %>
+          <li class = "group-list">
+            <div class="list-items">
+                <div class = "group-holder">
+                    <img class="w-25" src="<%= group.icon%>" alt="No IMG">
+                   <p class = "title"> <%= link_to group.name, group_path(group) %> </p>
+                </div>
+                <p class = "currency title"><%= number_to_currency(group.money_tracks.sum(&:amount))%></p>
+            </div>
+          </li>
+        <% end %>
+    </ul>
+    <%end%>
+</div>
+<div class="green-field">
+    <%= button_to "CREATE", new_group_path, class: "green-button", method: "get" %>
+</div>
+
+
+
+
+

@@ -1,0 +1,14 @@
+ <div class = "nav-top-two">
+    <a href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    <div id = "margin">
+      <p id= "no-padding">NEW MONEYTRACK</p>
+    </div>
+</div>
+ <%= form_with url: group_money_tracks_path(group_id: @group.id) , model: @money_track do |f| %>
+    <%= f.text_field :name, class: 'login-field',id: "groupname", placeholder: "Moneytrack Name", required: true %>
+    <%= f.text_field :amount, class: 'login-field mt-0', placeholder: "$", required: true %>
+    <%= f.hidden_field :group_id, value: @group.id %>
+    <div class="green-field">
+        <%= f.submit "CREATE", class: "green-button" %>
+    </div>
+<% end %>

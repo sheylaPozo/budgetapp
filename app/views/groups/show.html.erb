@@ -1,0 +1,40 @@
+<div class = "nav-top-two">
+    <a href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    <div id = "margin">
+      <p id= "no-padding">MONEYTRACKS</p>
+    </div>
+</div>
+<ul class = "group-ul">
+  <li class = "group-list">
+    <div class="list-items">
+        <div class = "group-holder">
+              <img src = <%= @group.icon %> width = 40px height = 40px>
+              <h5 class = "title"> <%= @group.name %> </h5>
+        </div>
+    </div>
+    <div class = "total-amount-holder title">
+      <p class = "currency">Total Amount:</p>
+      <%= number_to_currency(@group.money_tracks.sum(&:amount)) %>
+    </div>
+  </li>
+</ul>
+
+<ul class = "money-ul">
+  <% @group_money_tracks.each do |money_track| %>
+    <li class = "group-list">
+      <div class = 'flex title'>
+        <div class = "money-names">
+          <%= money_track.name %>
+        </div>
+          <%= number_to_currency(money_track.amount) %>
+      </div>
+        <small >
+        <%= money_track.created_at.strftime("%d-%b-%Y %H:%M:%S") %>
+        </small>
+    </li>
+  <% end %>
+</ul>
+<div class="green-field">
+    <%= button_to "ADD MONEYTRACKS", new_group_money_track_path(group_id: @group.id), class: "green-button", method: "get" %>
+</div>
+

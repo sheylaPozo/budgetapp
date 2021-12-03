@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, :email, presence: true, length: { maximum: 100 }
-  validates :email, uniqueness: true
+  has_many :groups, dependent: :destroy
+  has_many :budgets, dependent: :destroy
 
-  has_many :deals
-  has_many :categories
+  validates :name, presence: true, length: { maximum: 50 }
+  validates :email, presence: true, length: { maximum: 50 }
+  validates :password, presence: true, length: { maximum: 30 }
 end
