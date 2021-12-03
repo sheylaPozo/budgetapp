@@ -15,7 +15,7 @@ RSpec.describe 'Group view', type: :feature do
       visit group_path(group)
     end
 
-    it { expect(page).to have_content('BUDGETAPP') }
+    it { expect(page).to have_content('BUDGET') }
     it { expect(page).to have_content('Fast Food') }
     it { expect(page).to have_css("img[src*='http//']") }
     it { expect(page).to have_content('Hamburger') }
