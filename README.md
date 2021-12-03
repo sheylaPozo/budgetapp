@@ -7,7 +7,7 @@
 
 ## Demo Link: 
 
-[live](https://budgetapps.herokuapp.com/)
+[live](https://budgetapps.herokuapp.com/) 
 
 ## Built With 🤍
 
