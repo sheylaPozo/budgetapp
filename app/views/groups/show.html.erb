@@ -1,7 +1,7 @@
 <div class = "nav-top-two">
     <a href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
     <div id = "margin">
-      <p id= "no-padding">MONEYTRACKS</p>
+      <p id= "no-padding">BUDGETS</p>
     </div>
 </div>
 <ul class = "group-ul">
@@ -14,27 +14,27 @@
     </div>
     <div class = "total-amount-holder title">
       <p class = "currency">Total Amount:</p>
-      <%= number_to_currency(@group.money_tracks.sum(&:amount)) %>
+      <%= number_to_currency(@group.budgets.sum(&:amount)) %>
     </div>
   </li>
 </ul>
 
-<ul class = "money-ul">
-  <% @group_money_tracks.each do |money_track| %>
+<ul class = "budget-ul">
+  <% @group_budgets.each do |budget| %>
     <li class = "group-list">
       <div class = 'flex title'>
-        <div class = "money-names">
-          <%= money_track.name %>
+        <div class = "budget-names">
+          <%= budget.name %>
         </div>
-          <%= number_to_currency(money_track.amount) %>
+          <%= number_to_currency(budget.amount) %>
       </div>
         <small >
-        <%= money_track.created_at.strftime("%d-%b-%Y %H:%M:%S") %>
+        <%= budget.created_at.strftime("%d-%b-%Y %H:%M:%S") %>
         </small>
     </li>
   <% end %>
 </ul>
 <div class="green-field">
-    <%= button_to "ADD MONEYTRACKS", new_group_money_track_path(group_id: @group.id), class: "green-button", method: "get" %>
+    <%= button_to "ADD BUDGETS", new_group_budget_path(group_id: @group.id), class: "green-button", method: "get" %>
 </div>
 

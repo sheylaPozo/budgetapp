@@ -16,7 +16,7 @@
                     <img class="w-25" src="<%= group.icon%>" alt="No IMG">
                    <p class = "title"> <%= link_to group.name, group_path(group) %> </p>
                 </div>
-                <p class = "currency title"><%= number_to_currency(group.money_tracks.sum(&:amount))%></p>
+                <p class = "currency title"><%= number_to_currency(group.budgets.sum(&:amount))%></p>
             </div>
           </li>
         <% end %>
