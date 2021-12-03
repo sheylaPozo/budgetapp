@@ -11,6 +11,3 @@ Rails.application.routes.draw do
     resources :budget, only: [:new, :show, :create]
   end
 end
-
-
-
