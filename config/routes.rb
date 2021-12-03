@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  root to: 'categories#index'
   devise_for :users
 
-  resources :categories
+  unauthenticated do
+    root "users#home"
+  end
+
+  root "groups#index", as: "budget"
+
+  resources :groups, only: [:new, :show, :create] do
+    resources :money_tracks, only: [:new, :show, :create]
+  end
 end
+
+
+
