@@ -40,14 +40,14 @@ a {
 }
 
 .login-btn {
-  background-color: #ffbd09;
+  background-color: #8fdbcb;
   padding: 0.5rem 0;
   border: none;
   border-radius: 5px;
 }
 
 #loginBtn {
-  color: rgb(255, 197, 5);
+  color: rgb(0, 247, 255);
 }
 
 .signup-btn {
