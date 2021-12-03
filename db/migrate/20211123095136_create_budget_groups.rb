@@ -1,4 +1,4 @@
-class CreateMoneyGroups < ActiveRecord::Migration[6.1]
+class CreateBudgetGroups < ActiveRecord::Migration[6.1]
   def change
     create_table :budget_groups do |t|
       t.references :group, null: false, foreign_key: true
