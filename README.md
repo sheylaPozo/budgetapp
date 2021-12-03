@@ -5,6 +5,10 @@
 > A mobile web application where you can manage your budget 🤍
 > With a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
+## Demo Link: 
+
+[live](https://budgetapps.herokuapp.com/)
+
 ## Built With 🤍
 
 - Ruby on Rails
@@ -83,6 +87,6 @@ Hat tip to anyone whose code was used:
 - Original design idea by Gregoire Vella on [Behance](https://www.behance.net/gregoirevella).
 - Inspiration
 
-## 📝 License: 
+## 📝 License 🤍:
 
 This project is [MIT](./LICENSE.md) licensed.
