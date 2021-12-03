@@ -9,7 +9,7 @@ class Group < ApplicationRecord
 
   def add_budget(options)
     budget = budget.create!(name: options[:name], amount: options[:amount], user: options[:user])
-    budgets << budget
+    budgets << budge
     budget
   end
 end
