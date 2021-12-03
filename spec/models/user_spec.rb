@@ -1,44 +1,53 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'validates' do
-    subject { FactoryBot.build :user }
+  let(:user) { User.new(name: 'Sheyla', email: 'Sheyla@mail.com', password: '12345') }
 
-    it 'should have a name' do
-      subject.name = nil
-      expect(subject).to_not be_valid
-    end
+  before { user.save }
 
-    it 'should not have an empty name' do
-      subject.name = ' '
-      expect(subject).to_not be_valid
-    end
-
-    it 'should have name not longer than 100 chars' do
-      subject.name = 'a' * 101
-      expect(subject).to_not be_valid
-    end
-
-    it 'should have an email' do
-      subject.email = nil
-      expect(subject).to_not be_valid
-    end
+  describe 'assocciations' do
+    it { should have_many(:budgets) }
+    it { should have_many(:groups) }
   end
 
-  describe 'association' do
-    context 'has-many categories' do
-      subject { FactoryBot.build(:user_with_categories, categories_count: 3) }
-
-      it 'should have categories' do
-        expect(subject.categories.length).to be 3
+  describe 'validations' do
+    context 'with correct parameters' do
+      it 'name, email, password should be present' do
+        expect(user).to be_valid
       end
     end
 
-    context 'has-many deals' do
-      subject { FactoryBot.build(:user_with_deals, deals_count: 3) }
+    context 'with wrong parameters' do
+      it 'name should be present' do
+        user.name = nil
+        expect(user).to_not be_valid
+      end
 
-      it 'should have deals' do
-        expect(subject.deals.length).to be 3
+      it 'email should be present' do
+        user.email = nil
+        expect(user).to_not be_valid
+      end
+
+      it 'email should be present' do
+        user.password = nil
+        expect(user).to_not be_valid
+      end
+
+      it 'name should not be too long' do
+        user.name = 'Sheyla' * 10
+        expect(user).to_not be_valid
+      end
+
+      it 'email should not be too long' do
+        user.email = 'Sheyla.PozoEspinoza@mail.com' * 20
+        expect(user).to_not be_valid
+      end
+
+      it 'password should not be too long' do
+        user.password = 'thisismypassword' * 10
+        expect(user).to_not be_valid
       end
     end
   end

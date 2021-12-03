@@ -1,10 +1,10 @@
+# frozen_string_literal: true
+
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-    return unless user.present?
-
-    can :manage, Deal, author: user
-    can :manage, Category, user: user
+    user ||= User.new
+    can :manage, :all if user.id == current_user.id
   end
 end
