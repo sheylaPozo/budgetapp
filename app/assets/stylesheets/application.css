@@ -5,7 +5,7 @@
 }
 
 #body {
-  background-color: #db98f5;
+  background-color: #e68df8;
 }
 
 .profiler-result {
@@ -18,7 +18,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: rgb(24, 98, 121) !important;
+  color: rgb(129, 45, 179) !important;
 }
 
 .home-container {
@@ -40,14 +40,14 @@ a {
 }
 
 .login-btn {
-  background-color: #6c37c2;
+  background-color: #ff6b8b;
   padding: 0.5rem 0;
   border: none;
   border-radius: 5px;
 }
 
 #loginBtn {
-  color: rgb(129, 0, 141);
+  color: rgb(168, 112, 241);
 }
 
 .signup-btn {
@@ -58,31 +58,31 @@ a {
 }
 
 #signupBtn {
-  color: rgb(147, 47, 172);
+  color: rgb(255, 78, 255);
 }
 
 .fa-arrow-left {
-  color: #fff;
+  color: rgb(201, 113, 236);
 }
 
 .nav-top {
   padding: 2px 0.5rem 0.5rem 0.5rem;
-  background-color: #a173eb;
-  display: flex;
-  margin-bottom: 1rem;
-  justify-content: space-between;
-  align-items: baseline;
-  color: rgb(230, 189, 189);
-}
-
-.nav-top-two {
-  padding: 0.7rem 0.5rem 0.5rem 0.5rem;
-  background-color: #5a22b4;
+  background-color: #a83184;
   display: flex;
   margin-bottom: 1rem;
   justify-content: space-between;
   align-items: baseline;
   color: rgb(240, 232, 232);
+}
+
+.nav-top-two {
+  padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+  background-color: #b434b4;
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: baseline;
+  color: rgb(239, 240, 232);
 }
 
 #margin {
@@ -151,7 +151,7 @@ input::placeholder {
 }
 
 .green-field {
-  background-color: #87c75a;
+  background-color: #99d370;
   padding: 0.5rem;
   margin-top: 1rem;
   position: fixed;
@@ -165,7 +165,7 @@ input::placeholder {
   color: rgb(240, 232, 232);
   border: 1px solid #fff;
   border-radius: 4px;
-  background-color: #acf578;
+  background-color: #c1df3e;
 }
 
 .group-ul {
