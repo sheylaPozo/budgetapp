@@ -8,7 +8,7 @@ RSpec.describe 'User view', type: :feature do
   describe '#home' do
     before { visit root_path }
 
-    it { expect(page.body).to have_content('Budgetapp') }
+    it { expect(page.body).to have_content('Budget') }
 
     context 'button on click' do
       it 'should redirect me to Login page' do

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'MoneyTrack view', type: :feature do
+RSpec.describe 'budget view', type: :feature do
   include Devise::Test::IntegrationHelpers
   let(:user) { User.new(name: 'sheyla', email: 'sheyla@mail.com', password: '123456') }
   let(:group) { Group.create(name: 'Fast Food', icon: 'http//', user: user) }
@@ -11,10 +11,10 @@ RSpec.describe 'MoneyTrack view', type: :feature do
   describe '#index' do
     before do
       sign_in user
-      visit new_group_money_track_path(group_id: group)
+      visit new_group_budget_path(group_id: group)
     end
 
-    it { expect(page).to have_content('NEW MONEYTRACK') }
+    it { expect(page).to have_content('NEW BUDGET') }
 
     it 'should have email, password inputs' do
       input_type.each do |type|

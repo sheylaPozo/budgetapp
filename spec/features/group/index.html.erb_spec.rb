@@ -10,7 +10,7 @@ RSpec.describe 'Group view', type: :feature do
     before do
       Group.create(name: 'Fast Food', icon: 'http//', user: user)
       sign_in user
-      visit moneytrack_path
+      visit budget_path
     end
 
     context 'when rendering index page' do

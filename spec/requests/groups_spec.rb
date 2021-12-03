@@ -15,7 +15,7 @@ RSpec.describe 'Groups', type: :request do
   end
 
   describe 'GET /index' do
-    before { get moneytrack_path }
+    before { get budget_path }
     it 'should have response status correct(ok)' do
       expect(response).to have_http_status(:ok)
     end

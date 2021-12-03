@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
   before { user.save }
 
   describe 'assocciations' do
-    it { should have_many(:money_tracks) }
+    it { should have_many(:budgets) }
     it { should have_many(:groups) }
   end
 

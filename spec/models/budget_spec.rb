@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe MoneyTrack, type: :model do
+RSpec.describe Budget, type: :model do
   describe 'associations' do
     it { should belong_to(:user) }
   end
