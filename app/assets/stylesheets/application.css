@@ -40,7 +40,7 @@ a {
 }
 
 .login-btn {
-  background-color: #ff6b8b;
+  background-color: #0674ce;
   padding: 0.5rem 0;
   border: none;
   border-radius: 5px;
@@ -58,7 +58,7 @@ a {
 }
 
 #signupBtn {
-  color: rgb(255, 78, 255);
+  color: rgb(0, 66, 189);
 }
 
 .fa-arrow-left {
