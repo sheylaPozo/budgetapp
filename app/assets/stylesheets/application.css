@@ -18,7 +18,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: rgb(255, 255, 255) !important;
+  color: rgb(31, 28, 241) !important;
 }
 
 .home-container {
@@ -40,14 +40,14 @@ a {
 }
 
 .login-btn {
-  background-color: #8e1f9c;
+  background-color: #ffbd09;
   padding: 0.5rem 0;
   border: none;
   border-radius: 5px;
 }
 
 #loginBtn {
-  color: rgb(105, 38, 194);
+  color: rgb(255, 197, 5);
 }
 
 .signup-btn {
