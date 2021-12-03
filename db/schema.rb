@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 2021_11_23_095221) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "groups", force: :cascade do |t|
+  create_table "group", force: :cascade do |t|
     t.string "name"
     t.string "icon"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_groups_on_user_id"
+    t.index ["user_id"], name: "index_group_on_user_id"
   end
 
   create_table "budget_groups", force: :cascade do |t|
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_095221) do
     t.index ["budget_id"], name: "index_budget_groups_on_budget_id"
   end
 
-  create_table "budgets", force: :cascade do |t|
+  create_table "budget", force: :cascade do |t|
     t.string "name"
     t.integer "amount"
     t.bigint "user_id", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_095221) do
     t.index ["user_id"], name: "index_bubget_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "user", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 2021_11_23_095221) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "groups", "users"
-  add_foreign_key "money_groups", "groups"
-  add_foreign_key "money_groups", "budgets"
-  add_foreign_key "money_tracks", "users"
+  add_foreign_key "group", "user"
+  add_foreign_key "budget", "group"
+  add_foreign_key "budget", "budget"
+  add_foreign_key "budget", "user"
 end

@@ -1,6 +1,6 @@
-class CreateBudgets < ActiveRecord::Migration[6.1]
+class CreateBudget < ActiveRecord::Migration[6.1]
   def change
-    create_table :budgets do |t|
+    create_table :budget do |t|
       t.string :name
       t.integer :amount
       t.references :user, null: false, foreign_key: true
