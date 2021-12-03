@@ -1,4 +1,6 @@
-class budgets_Controller < ApplicationController
+# frozen_string_literal: true
+
+class BudgetsController < ApplicationController
   def new
     @group = Group.find(params[:group_id])
     @budget = budget.new
