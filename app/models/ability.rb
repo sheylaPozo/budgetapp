@@ -7,4 +7,4 @@ class Ability
     user ||= User.new
     can :manage, :all if user.id == current_user.id
   end
-en
+end
