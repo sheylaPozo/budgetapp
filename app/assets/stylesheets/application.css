@@ -207,14 +207,14 @@ input::placeholder {
   align-items: baseline;
 }
 
-.money-ul {
+.budget-ul {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.money-names {
+.budget-names {
   margin-bottom: 0.5rem;
 }
 
