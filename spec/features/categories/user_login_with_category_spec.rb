@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.feature 'Category Index Page', type: :feature do
@@ -7,8 +5,8 @@ RSpec.feature 'Category Index Page', type: :feature do
   background do
     create(:category, user: @user, icon: Faker::LoremFlickr.image(size: '50x60', search_terms: ['fitness']))
     create(:category, user: @user, icon: Faker::LoremFlickr.image(size: '50x60', search_terms: ['sports']))
-    @user.categories.first.budgets.create([{ name: 'budget 1', amount: 100, user: @user },
-                                           { name: 'budget 2', amount: 100, user: @user }])
+    @user.categories.first.treaties.create([{ name: 'Treaty 1', amount: 100, user: @user },
+                                            { name: 'Treaty 2', amount: 100, user: @user }])
     visit(categories_path)
   end
 

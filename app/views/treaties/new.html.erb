@@ -1,4 +1,4 @@
-<%= form_with url: budgets_path, model: @budget do |f| %>
+<%= form_with url: treaties_path, model: @treaty do |f| %>
   <header class="header">
     <nav class="nav">
       <%= link_to go_back, class: "back__link" do %>
@@ -8,7 +8,7 @@
       <%= f.submit "Save", class: "action" %>
     </nav>
   </header>
-  <%= render "devise/shared/error_messages", resource: @budget %>
+  <%= render "devise/shared/error_messages", resource: @treaty %>
 
   <div class="fields">
     <div class="field">

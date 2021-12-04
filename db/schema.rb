@@ -23,21 +23,21 @@ ActiveRecord::Schema.define(version: 2021_11_22_081727) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
-  create_table "categories_budgets", force: :cascade do |t|
+  create_table "categories_treaties", force: :cascade do |t|
     t.bigint "category_id"
-    t.bigint "budget_id"
+    t.bigint "treaty_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_categories_budgets_on_category_id"
-    t.index ["budget_id"], name: "index_categories_budgets_on_budget_id"
+    t.index ["category_id"], name: "index_categories_treaties_on_category_id"
+    t.index ["treaty_id"], name: "index_categories_treaties_on_treaty_id"
   end
 
-  create_table "budgets", force: :cascade do |t|
+  create_table "treaties", force: :cascade do |t|
     t.string "name"
     t.decimal "amount"
     t.bigint "author_id", null: false
     t.datetime "created_at", null: false
-    t.index ["author_id"], name: "index_budgets_on_author_id"
+    t.index ["author_id"], name: "index_treaties_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,5 +54,5 @@ ActiveRecord::Schema.define(version: 2021_11_22_081727) do
   end
 
   add_foreign_key "categories", "users"
-  add_foreign_key "budgets", "users", column: "author_id"
+  add_foreign_key "treaties", "users", column: "author_id"
 end

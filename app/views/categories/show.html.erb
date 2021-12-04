@@ -24,12 +24,12 @@
         </div>
       </div>
       <hr />
-      <ul class="budget__list">
+      <ul class="treaty__list">
         <% if @treaties.empty? %>
           <div class="empty">No Transactions for now</div>
         <% else %>
-          <% @treaties.each do |budget| %>
-            <%= render partial: "budget_card", locals: { budget: budget } %>
+          <% @treaties.each do |treaty| %>
+            <%= render partial: "treaty_card", locals: { treaty: treaty } %>
           <% end %>
         <% end %>
       </ul>
@@ -37,6 +37,6 @@
   </div>
 
   <div class="cta__container">
-    <%= link_to "ADD A NEW TRANSACTION", new_budget_path, class: "add__btn" %>
+    <%= link_to "ADD A NEW TRANSACTION", new_treaty_path, class: "add__btn" %>
   </div>
 </div>

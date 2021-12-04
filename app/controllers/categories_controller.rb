@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 class CategoriesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @groups = current_user.my_categories_and_budgets
+    @groups = current_user.my_categories_and_treaties
   end
 
   def new
@@ -13,7 +11,7 @@ class CategoriesController < ApplicationController
 
   def show
     @group = Category.find(params[:id])
-    @budgets = @group.budgets_with_user
+    @treaties = @group.treaties_with_user
   end
 
   def create

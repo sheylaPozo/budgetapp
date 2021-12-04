@@ -10,7 +10,7 @@
             <h3 class="title"><%= group.name.capitalize %></h3>
             <span class="date"><%= group.created_at.strftime('%-d %h %Y') %></span>
           </div>
-           <p class="amount">$<%= group.budgets.sum(:amount) %></p>
+           <p class="amount">$<%= group.treaties.sum(:amount) %></p>
         </div>
       </div>
     </div>

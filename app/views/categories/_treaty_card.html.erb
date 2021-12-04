@@ -1,0 +1,10 @@
+<li class="treaty__item" id: "transaction#{treaty.id}">
+  <div class="treaty__card">
+    <h3 class="treaty__card-name"><%= treaty.name %></h3>
+    <div class="time">
+      <i class='bx bx-calendar'></i> <%= treaty.created_at.strftime('%-d %h %Y at %I:%M%P') %>
+    </div>
+    <span class="amount">$<%= treaty.amount %></span>
+  </div>
+</li>
+<hr />

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'Categories', type: :request do
@@ -7,10 +5,10 @@ RSpec.describe 'Categories', type: :request do
     login_user
     before(:each) do
       @food = create(:category, name: 'Food', user: @user, icon: Faker::LoremFlickr.image(search_terms: ['politics']))
-      @clothes = create(:category, name: 'clothes', user: @user, icon: Faker::Company.logo)
-      @budget1 = create(:budget, name: 'budget1', user: @user, categories: [@food, @clothes])
-      @budget2 = create(:budget, name: 'budget2', user: @user, categories: [@food, @clothes])
-      @clothes.budgets.push(@budget1, @budget2)
+      @garri = create(:category, name: 'Garri', user: @user, icon: Faker::Company.logo)
+      @treaty1 = create(:treaty, name: 'Treaty1', user: @user, categories: [@food, @garri])
+      @treaty2 = create(:treaty, name: 'Treaty2', user: @user, categories: [@food, @garri])
+      @garri.treaties.push(@treaty1, @treaty2)
       get categories_path
     end
 
@@ -24,8 +22,8 @@ RSpec.describe 'Categories', type: :request do
 
     it 'should include list of categories created by user' do
       expect(response.body).to include('Food')
-      expect(response.body).to include('clothes')
-      expect(response.body).to include("$#{@clothes.budgets.sum(:amount)}")
+      expect(response.body).to include('Garri')
+      expect(response.body).to include("$#{@garri.treaties.sum(:amount)}")
     end
   end
 
@@ -79,9 +77,9 @@ RSpec.describe 'Categories', type: :request do
     login_user
     before(:each) do
       @food = create(:category, name: 'Yam', user: @user, icon: Faker::LoremFlickr.image(search_terms: ['business']))
-      @budget1 = create(:budget, name: 'budget Yam 1', user: @user, categories: [@food])
-      @budget2 = create(:budget, name: 'budget Yam 2', user: @user, categories: [@food])
-      @food.budgets.push(@budget1, @budget2)
+      @treaty1 = create(:treaty, name: 'Treaty Yam 1', user: @user, categories: [@food])
+      @treaty2 = create(:treaty, name: 'Treaty Yam 2', user: @user, categories: [@food])
+      @food.treaties.push(@treaty1, @treaty2)
       get category_path(@food)
     end
 
@@ -95,11 +93,11 @@ RSpec.describe 'Categories', type: :request do
 
     it 'should include category and its transactions' do
       expect(response.body).to include('Yam')
-      expect(response.body).to include("$#{@food.budgets.sum(:amount)}")
-      @food.budgets.each do |budget|
-        expect(response.body).to include(budget.name)
-        expect(response.body).to include("$#{budget.amount}")
-        expect(response.body).to include(budget.created_at.strftime('%-d %h %Y'))
+      expect(response.body).to include("$#{@food.treaties.sum(:amount)}")
+      @food.treaties.each do |treaty|
+        expect(response.body).to include(treaty.name)
+        expect(response.body).to include("$#{treaty.amount}")
+        expect(response.body).to include(treaty.created_at.strftime('%-d %h %Y'))
       end
     end
   end
