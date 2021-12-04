@@ -1,0 +1,124 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "colors";
+
+.app {
+  background: $bg-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category__list {
+  margin-bottom: 4rem;
+}
+
+.category__link {
+  display: block;
+  color: rgb(88, 86, 86);
+  font-weight: bold;
+  font-family: 'ProximaBold', sans-serif;
+  width: 95%;
+  margin: 0 auto 1.5rem;
+}
+
+.outer {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  width: 100%;
+  padding: 1rem;
+  background: #fff;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+}
+
+.inner {
+  margin-top: 0.8rem;
+  margin-left: 2rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+}
+
+.amount {
+  color: #000;
+}
+
+.date {
+  font-size: 1rem;
+  font-family: 'ProximaThin', sans-serif;
+}
+
+.cta__container {
+  width: 100%;
+  background: $secondary-color;
+  padding: 2rem;
+  text-align: center;
+}
+
+.add__btn {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid #fff;
+  padding: 1.8rem;
+  color: #fff;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.category__panel {
+  width: 95%;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.category__card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2rem;
+}
+
+hr {
+  margin: 2rem 1rem;
+}
+
+.treaty__item {
+  padding: 0.5rem 1rem;
+}
+
+.treaty__card-name {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.time {
+  margin-bottom: 1rem;
+  color: #ccc;
+}

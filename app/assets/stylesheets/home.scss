@@ -1,0 +1,57 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "colors";
+
+.splash__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.splash__header {
+  margin: 20rem 0;
+  font-family: "Petemoss", cursive;
+  font-style: italic;
+  font-size: 5rem;
+}
+
+.splash__buttons {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.active {
+  background: $primary-color;
+  color: #fff;
+}
+
+.splash__button {
+  display: block;
+  width: 100%;
+  padding: 2rem 0;
+  font-family: 'ProximaThin', sans-serif;
+  color: #434b54;
+}
+
+.splash__button.active {
+  color: #fff;
+}
+
+.splash__button:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.splash__button:hover {
+  background: $primary-color;
+  color: #fff;
+}
+
+.active:hover {
+  font-weight: bold;
+}

@@ -1,0 +1,21 @@
+<%= form_with url: categories_path, model: @group do |f| %>
+  <header class="header">
+    <nav class="nav">
+      <%= link_to categories_path, class: "back__link" do %>
+        <i class='bx bx-arrow-back'></i>
+      <% end %>
+      <span>CREATE CATEGORY</span>
+      <%= f.submit "Save", class: "action" %>
+    </nav>
+  </header>
+  <%= render "devise/shared/error_messages", resource: @group %>
+
+  <div class="fields">
+    <div class="field">
+      <%= f.text_field :name, { autofocus: true, autocomplete: "name", class: "input", placeholder: "Name", required: true } %>
+    </div>
+    <div class="field">
+      <%= f.text_field :icon, { autofocus: true, autocomplete: "icon", class: "input", placeholder: "Icon link", required: true } %>
+    </div>
+  </div>
+<% end %>

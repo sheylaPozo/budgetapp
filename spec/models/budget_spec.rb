@@ -3,15 +3,28 @@
 require 'rails_helper'
 
 RSpec.describe Budget, type: :model do
-  describe 'associations' do
-    it { should belong_to(:user) }
-  end
-
   describe 'validations' do
-    it { should validate_presence_of(:name) }
-    it { is_expected.to validate_length_of(:name).is_at_most(50) }
-    it { should validate_presence_of(:amount) }
-    it { should validate_numericality_of(:amount).is_greater_than(0) }
-    it { should validate_numericality_of(:amount).only_integer }
+    let(:budget) do
+      create(:budget, categories: [create(:category, icon: Faker::LoremFlickr.image(search_terms: ['cups']))])
+    end
+    it 'name should be present' do
+      budget.name = nil
+      expect(budget).to_not be_valid
+    end
+
+    it 'amount should be present' do
+      budget.amount = nil
+      expect(budget).to_not be_valid
+    end
+
+    it 'aleast one category should be present' do
+      budget.categories = []
+      expect(budget).to_not be_valid
+    end
+
+    it 'owner should be present' do
+      budget.user = nil
+      expect(budget).to_not be_valid
+    end
   end
 end

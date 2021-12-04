@@ -1,26 +1,25 @@
 # frozen_string_literal: true
 
 class BudgetsController < ApplicationController
+  load_and_authorize_resource
+
   def new
-    @group = Group.find(params[:group_id])
     @budget = Budget.new
   end
 
   def create
-    @group = Group.find(group_id)
-    @budget = @group.add_budget(budget_params)
-    redirect_to @group
-  rescue ActiveRecord::RecordInvalid
-    render :new, group_id: group_id
-  end
-
-  private
-
-  def group_id
-    params.dig(:budget, :group_id) || params[:group_id]
+    @budget = Budget.new(budget_params)
+    @budget.user = current_user
+    if @budget.save
+      flash[:notice] = 'Budget created successfully'
+      redirect_to category_path(@budget.categories.first.id)
+    else
+      flash[:alert] = 'Budget not created'
+      render :new
+    end
   end
 
   def budget_params
-    params.require(:budget).permit(:name, :amount).merge(user: current_user)
+    params.require(:budget).permit(:name, :amount, category_ids: [])
   end
 end

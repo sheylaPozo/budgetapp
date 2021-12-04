@@ -1,14 +1,25 @@
- <div class = "nav-top-two">
-    <a href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-    <div id = "margin">
-      <p id= "no-padding">NEW BUDGET</p>
+<%= form_with url: budgets_path, model: @budget do |f| %>
+  <header class="header">
+    <nav class="nav">
+      <%= link_to go_back, class: "back__link" do %>
+        <i class='bx bx-arrow-back'></i>
+      <% end %>
+      <span>NEW TRANSACTION</span>
+      <%= f.submit "Save", class: "action" %>
+    </nav>
+  </header>
+  <%= render "devise/shared/error_messages", resource: @budget %>
+
+  <div class="fields">
+    <div class="field">
+      <%= f.text_field :name, { autofocus: true, autocomplete: "name", class: "input", placeholder: "Name", required: true} %>
     </div>
-</div>
- <%= form_with url: group_budgets_path(group_id: @group.id) , model: @budget do |f| %>
-    <%= f.text_field :name, class: 'login-field',id: "groupname", placeholder: "BUDGET Name", required: true %>
-    <%= f.text_field :amount, class: 'login-field mt-0', placeholder: "$", required: true %>
-    <%= f.hidden_field :group_id, value: @group.id %>
-    <div class="green-field">
-        <%= f.submit "CREATE", class: "green-button" %>
+    <div class="field">
+      <%= f.number_field :amount, { autofocus: true, autocomplete: "amtunr", class: "input", placeholder: "Amount", required: true, step: "any" } %>
     </div>
+    <div class="field">
+      <%= f.label :category_id, "Choose Category (select atleast one)" %>
+      <%= f.collection_select :category_ids, current_user.categories_by_name, :id, :name, {}, { class: "input", multiple: true, required: true} %>
+    </div>
+  </div>
 <% end %>
