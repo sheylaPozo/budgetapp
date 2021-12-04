@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Budget', type: :request do
+RSpec.describe 'Budgets', type: :request do
   let(:user) { User.create(name: 'sheyla', email: 'sheyla@mail.com', password: '123456') }
   let(:group) { Group.create(name: 'Fast Food', icon: 'http//', user: user) }
 
