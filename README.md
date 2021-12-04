@@ -7,7 +7,9 @@
 
 ## Demo Link: 
 
-[live](https://budgetapps.herokuapp.com/) 
+[live Demo](https://budgetapps.herokuapp.com/) 
+
+[Video Demo](https://www.loom.com/share/1555f689a73d4af38f3cd9970d3f5ae0)
 
 ## Built With 🤍
 
