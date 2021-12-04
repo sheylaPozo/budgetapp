@@ -1,0 +1,42 @@
+<div class="app">
+  <div class="category__content">  
+    <header class="header">
+      <nav class="nav">
+        <%= link_to categories_path, class: "back__link" do %>
+          <i class='bx bx-arrow-back'></i>
+        <% end %>
+        <span>Details</span>
+        <%= link_to "Log out", destroy_user_session_path, class: "action", method: :delete %>
+      </nav>
+    </header>
+    <div class="flash__message">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <div class="category__panel">
+      <div class="category__card">
+         <div class="image">
+           <%= image_tag @group.icon, alt: "group" %>
+         </div>
+         <div class="details">
+           <h6 class="title"><%= @group.name %></h6>
+           <span class="amount">$<%= @group.total_amount %></span>
+        </div>
+      </div>
+      <hr />
+      <ul class="treaty__list">
+        <% if @treaties.empty? %>
+          <div class="empty">No Transactions for now</div>
+        <% else %>
+          <% @treaties.each do |treaty| %>
+            <%= render partial: "treaty_card", locals: { treaty: treaty } %>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta__container">
+    <%= link_to "ADD A NEW TRANSACTION", new_treaty_path, class: "add__btn" %>
+  </div>
+</div>

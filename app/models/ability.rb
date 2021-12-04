@@ -4,7 +4,9 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.new
-    can :manage, :all if user.id == current_user.id
+    return unless user.present?
+
+    can :manage, Category, user: user
+    can :manage, Treaty, user: user
   end
 end

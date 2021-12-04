@@ -1,0 +1,30 @@
+<div class="app">
+  <div class="category__content">  
+    <header class="header">
+      <nav class="nav">
+        <span></span>
+        <span>CATEGORIES</span>
+        <%= link_to "Log out", destroy_user_session_path, class: "action", method: :delete %>
+      </nav>
+    </header>
+    <div class="flash__message">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <ul class="category__list">
+      <% if @groups.empty? %>
+        <div class="empty">
+          No categories for now
+        </div>
+      <% else %>
+        <% @groups.each do |group| %>
+          <%= render partial: 'group_card', locals: { group: group } %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="cta__container">
+    <%= link_to "ADD A NEW CATEGORY", new_category_path, class: "add__btn" %>
+  </div>
+</div>

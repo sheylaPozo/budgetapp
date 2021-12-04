@@ -1,0 +1,25 @@
+<%= form_with url: treaties_path, model: @treaty do |f| %>
+  <header class="header">
+    <nav class="nav">
+      <%= link_to go_back, class: "back__link" do %>
+        <i class='bx bx-arrow-back'></i>
+      <% end %>
+      <span>NEW TRANSACTION</span>
+      <%= f.submit "Save", class: "action" %>
+    </nav>
+  </header>
+  <%= render "devise/shared/error_messages", resource: @treaty %>
+
+  <div class="fields">
+    <div class="field">
+      <%= f.text_field :name, { autofocus: true, autocomplete: "name", class: "input", placeholder: "Name", required: true} %>
+    </div>
+    <div class="field">
+      <%= f.number_field :amount, { autofocus: true, autocomplete: "sheyla", class: "input", placeholder: "Amount", required: true, step: "any" } %>
+    </div>
+    <div class="field">
+      <%= f.label :category_id, "Choose Category (select atleast one)" %>
+      <%= f.collection_select :category_ids, current_user.categories_by_name, :id, :name, {}, { class: "input", multiple: true, required: true} %>
+    </div>
+  </div>
+<% end %>
